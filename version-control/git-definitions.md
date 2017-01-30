@@ -1,4 +1,4 @@
-# Git Definitions
+# Git Definitions - upda
 
 **Instructions: ** Define each of the following Git concepts.
 
@@ -13,3 +13,4 @@ A commit is a save. A commit message should explain clearly and concisely what w
 
 * What is a merge conflict?
 A merge conflict is when the branch you are working on and the one that you are merging into have commits that are not in the other branch. 
+
