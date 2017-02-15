@@ -1,0 +1,12 @@
+- approach elevator.
+- find two buttons stacked one above the other 
+	- the top button will have an up arrow (going up)
+	- the bottom button will have a down arrow (going down)
+- click button in direction you would like the elevator to go, going up or going down. 
+- when the elevator arrives, the door will open. 
+- enter the elevator
+- look at buttons with numbers, those represent each floor.
+- press the button of the floor you would like to arrive on.
+- doors will close and elevator will either move up or down depending on which floor you are going to
+- when door opens you will be on the floor you selected
+- exit the elevator. 
