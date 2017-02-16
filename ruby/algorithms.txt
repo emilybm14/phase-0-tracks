@@ -1,3 +1,5 @@
+Release 0: Equip Your New Robot
+- create a method that tells a robot how to use an elevator
 - approach elevator.
 - find two buttons stacked one above the other 
 	- the top button will have an up arrow (going up)
@@ -10,3 +12,12 @@
 - doors will close and elevator will either move up or down depending on which floor you are going to
 - when door opens you will be on the floor you selected
 - exit the elevator. 
+
+Release 1: Find a Real-Life Algorithm
+Going to Work 
+- create a method that tells a user how to get to work 
+- get the starting location (point a)
+- get the office location (point b)
+- map out the directions from point a to point b
+- start walking from point a to point b following the mapped directions
+- end at point b 
