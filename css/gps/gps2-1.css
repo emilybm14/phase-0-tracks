@@ -1,0 +1,38 @@
+body {
+  background-color: lightblue;
+  max-width: 960px;
+}
+
+header {
+  background-color: purple;
+}
+
+h1 {
+ color: hotpink;
+ border: 3px dotted lime;
+ width: 348px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid black;
+}
+
+.column-1 {
+  font-family: helvetica;
+  color: white;
+  display: inline-block;
+  width: 40%;
+  background-color: lime;
+  vertical-align: top;
+  }
+
+.column-2 {
+  display: inline-block;
+  background-color: pink;
+  margin: 0, 0, 2, 3;
+  border: 0px;
+  padding: 0, 0, 2, 3;
+  width: 40%;
+}
