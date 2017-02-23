@@ -1,4 +1,4 @@
-#Release 0
+# Release 0
 
 def farwell
 	puts "Bye-bye"
