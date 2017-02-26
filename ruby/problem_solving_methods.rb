@@ -48,14 +48,26 @@ def fib(x)
 	position = 0
 	# position_one = 0
 	# position_two = 1
-	while position < x 
-		fib_numbers << fib_numbers.index(0) + fib_numbers.index(1)
+	while fib_numbers.length < x 
+		fib_numbers << fib_numbers[position] + fib_numbers[position + 1]
 		position += 1
 	end
-	fib_numbers
+	fib_numbers[0...x]
 end
 
-p fib(6)
+p fib(100)
+
+p fib(100).last
+
+p 218922995834555169026
+
+p fib(100).last == 218922995834555169026
+
+p fib(1)
+
+
+
+
 
 
 
