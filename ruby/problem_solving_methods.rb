@@ -55,15 +55,52 @@ def fib(x)
 	fib_numbers[0...x]
 end
 
-p fib(100)
+# p fib(100)
 
-p fib(100).last
+# p fib(100).last
 
-p 218922995834555169026
+# p 218922995834555169026
 
-p fib(100).last == 218922995834555169026
+# p fib(100).last == 218922995834555169026
 
-p fib(1)
+# p fib(1)
+
+#Release 2
+#psuedocode 
+# - create array 
+# - use bubble method to sort 
+# 	- evaluate values at position 0 & 1
+# 		- if correct order, leave alone
+# 		- if incorrect order, switch positions
+# 	- loop through this process until all values are at the correct position 
+
+#Business Logic 
+
+def bubble_method(array)
+	position = 0 
+	change = true
+
+
+	while change 
+		change = false
+		while position < array.length - 1 
+			
+			if array[position] > array[position + 1]
+				swap_1 = array[position]
+				swap_2 = array[position + 1]
+				array[position] = swap_2
+				array[position + 1] = swap_1
+		 		change = true
+		 	end
+		 	position += 1
+		end
+		position = 0
+	end
+	array 
+end
+unsorted_array = [1, 2, 3, 5, 77, 76, 75, 4]
+
+p bubble_method(unsorted_array)
 
 
 
