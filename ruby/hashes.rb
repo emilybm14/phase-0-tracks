@@ -3,7 +3,7 @@
 designer_app = {
   app_name: " ",
   app_age: " ",
-  app_decor: " ",
+  app_decor: [],
   app_married: " ",
   app_children: " ",
   app_budget: " "
@@ -23,10 +23,17 @@ age = gets.chomp.to_i
 designer_app[:app_age] = age
 
 
-puts "What is the decor?"
-decor = gets.chomp
-designer_app[:app_decor] = decor
+puts "List Decor Option 1:"
+decor_1 = gets.chomp
+designer_app[:app_decor].push(decor_1)
 
+puts "List Decor Option 2:"
+decor_2 = gets.chomp
+designer_app[:app_decor].push(decor_2)
+
+puts "List Decor Option 2:"
+decor_3 = gets.chomp
+designer_app[:app_decor].push(decor_3)
 
 puts "Are you married? (y/n)"
 married = gets.chomp
@@ -65,9 +72,17 @@ puts "If all the information above is correct please type 'correct'. If not plea
     designer_app[:app_age] = age
     
     
-    puts "What is the decor?"
-    decor = gets.chomp
-    designer_app[:app_decor] = decor
+    puts "List Decor Option 1:"
+    decor_1 = gets.chomp
+    designer_app[:app_decor].push(decor_1)
+  
+    puts "List Decor Option 2:"
+    decor_2 = gets.chomp
+    designer_app[:app_decor].push(decor_2)
+    
+    puts "List Decor Option 2:"
+    decor_3 = gets.chomp
+    designer_app[:app_decor].push(decor_3)
     
     
     puts "Are you married? (y/n)"
