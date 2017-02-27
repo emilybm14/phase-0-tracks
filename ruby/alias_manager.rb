@@ -83,17 +83,14 @@ until user_input
   if full_name == "exit"
     user_input = true
   else
-  client_info[:first_name].push(full_name)
+  client_info[:first_name] << (full_name)
   
   consontants_swap(full_name)
-  client_info[:spy_name].push(consontants_swap(full_name))
+  client_info[:spy_name] << (consontants_swap(full_name))
   end
-p client_info
+  client_info
 end
 
-client_info.each do |first_name, spy_name|
-    puts "#{client_info[:first_name]} is actually #{client_info[:spy_name]} "
+client_info.each do |one, two|
+  puts "#{client_info[:first_name]} is actually #{client_info[:spy_name]}"
 end
-
-
-# Use a data structure to store the fake names as they are entered. When the user exits the program, iterate through the data structure and print all of the data the user entered. A sentence like "Vussit Gimodoe is actually Felicia Torres" or "Felicia Torres is also known as Vussit Gimodoe" for each agent is fine.
