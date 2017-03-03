@@ -37,36 +37,49 @@
 
 class Paintball_player
 
-	def initialize
-		puts "Initializing paintball player..."
-	end
+   def initialize
+      # puts "Initializing paintball player..."
+   end
 
-		def fire(number_of_shots)
-			puts "Poppp!" * number_of_shots.to_i
-		end
+       def fire(number_of_shots)
+           puts "Poppp!" * number_of_shots.to_i
+       end
 
-		def duck_for_cover(object)
-			puts "Take cover and hide behind #{object}"
-			object
-		end
+       def duck_for_cover(object)
+           puts "Take cover and hide behind #{object}"
+           object
+       end
 
-	def reload(pellets)
-			puts "Add #{pellets} paintballs to hopper"
-	end	
-	
+   def reload(pellets)
+           puts "Add #{pellets} paintballs to hopper"
+   end    
+   
 end
-
 object_for_cover = ["fallen tree", "hollowed out car", "wall", "teammate"]
 
 
-player_1 = Paintball_player.new
 
-50.times do 
-player_1.fire(40)
-player_1.duck_for_cover(object_for_cover)
-player_1.fire(5)
-player_1.reload(45)
 
+# player = Paintball_player.new
+
+player_array = []
+count = 0
+
+loop do
+  player_array << Paintball_player.new
+  
+  count += 1
+break if count == 50
+player_array
+end
+
+player_array.each do |instance|
+  instance.fire(1)
+  p '-----------------------------'
+  instance.fire(40)
+  instance.duck_for_cover(object_for_cover) 
+  instance.fire(5)
+  instance.reload(45)
 end
 
 
