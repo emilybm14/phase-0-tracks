@@ -1,22 +1,22 @@
 # with .self 
-# module Shout
-#   def self.yell_angrily(words)
-#     words + "!!!" + " :("
+module Shout
+  def self.yell_angrily(words)
+    words + "!!!" + " :("
 
-#   end
+  end
 
-#   def self.yelling_happily(exclamation)
-#   	"Yay!!! " + exclamation + "!!!!"
+  def self.yelling_happily(exclamation)
+  	"Yay!!! " + exclamation + "!!!!"
   	
-#   end
-# end
+  end
+end
 
 # class Yell 
 #     extend Shout
 # end 
 
-# puts Shout.yell_angrily("NOOOO")
-# puts Shout.yelling_happily("You Got it!")
+puts Shout.yell_angrily("NOOOO")
+puts Shout.yelling_happily("You Got it!")
 
 
 
@@ -47,5 +47,3 @@ puts yell.yell_angrily("NOOOO")
 
 exclaim = Exclaim.new
 puts exclaim.yelling_happily("You did it! You are amazing!")
-
-# 
