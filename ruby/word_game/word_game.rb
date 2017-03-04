@@ -13,12 +13,25 @@
 # Game ends
 Business logic 
 class Word_game
-	attr_reader :word_anwer
-	attr accessor :letter_guess
-def 
+	attr_reader :word_answer
+	attr_accessor :letter_guess
+	
+	def initialize (word_answer)
+		@word_answer = word_answer
+		@letter_guess = letter_guess
+	end
+
+	def collect_use1_input
+		@word_answer
+	end
+
+	def collect_letter_guess
+		@letter_guess
+	end
+
 
 end
 # Start new instance 
-game = Word_game.new
+game = Word_game.new()
 
 p game
