@@ -1,7 +1,7 @@
 
 class Santa
-	attr_reader :ethnicity
-	attr_reader :gender 
+	attr_reader :ethnicity, :age
+	attr_accessor :gender, :reindeer_ranking
 	def initialize(gender, ethnicity)
 		@gender = gender
 		@ethnicity = ethnicity
@@ -29,9 +29,9 @@ class Santa
 		@reindeer_ranking.push(reindeer)
 	end
 #getter methods
-	# def gender
-	# 	@gender
-	# end
+	def gender
+		@gender
+	end
 
 	# def ethnicity
 	# 	@ethnicity
@@ -40,10 +40,6 @@ class Santa
  # 	def gender=(new_gender)
 	# 	@gender = new_gender
 	# end
- 	
- 	def ethnicity=(new_ethnicity)
- 		@ethnicity=(new_ethnicity)
- 	end
 end
 
 # santa_description = [["agender", "black"],
@@ -58,7 +54,7 @@ end
 
 # list_of_santas = []
 
-santa = Santa.new("gender", "ethnicity")
+# santa = Santa.new("gender", "ethnicity")
 
 # santa_description.each {|description| list_of_santas << Santa.new(description[0], description[1])}
 
@@ -68,29 +64,34 @@ santa = Santa.new("gender", "ethnicity")
 # 	puts "--------------------------------"
 # end
 
-puts "iterating through santas... "
-santas = []
-example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
-example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
-example_genders.length.times do |i|
-santas << Santa.new(example_genders[i], example_ethnicities[i])
+# puts "iterating through santas... "
+# santas = []
+gender_choices = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+ethnicity_choices = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+# example_genders.length.times do |i|
+# santas << Santa.new(example_genders[i], example_ethnicities[i])
 	
-end
-santas.each do |santa|
-	puts "This santa is #{santa.gender} #{santa.ethnicity} santa"
+# end
+# santas.each do |santa|
+# 	puts "This santa is #{santa.gender} #{santa.ethnicity} santa"
+# 	puts "--------------------------------"
+# end
+
+
+# p santa.celebrate_birthday
+
+# p santa.get_mad_at("Vixen")
+
+santa_index = 0
+while santa_index < 50
+	new_santa = Santa.new(gender_choices.sample, ethnicity_choices.sample)
+	r = Random.new.rand(140)
+	r.times{new_santa.celebrate_birthday}
+	puts "This santa is #{new_santa.gender} #{new_santa.ethnicity} santa and #{new_santa.age} years old."
 	puts "--------------------------------"
-end
-
-
-p santa.celebrate_birthday
-
-p santa.get_mad_at("Vixen")
-
-# 50.times do 
-# 	new_santa = Santa.new(gender, ethnicity)
-
-
-# end 
+	santa_index +=1
+	p santa_index
+end 
 
 # puts "Testing each santa instance in the array to make sure they can speak ..."
 # list_of_santas.each do |words|
