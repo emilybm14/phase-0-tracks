@@ -97,10 +97,8 @@ class Hangman
 	end
 end
 # Start new instance 
-game = Hangman.new("test")
-# game.create_board
-# game.guess_letter
-# game.guess_letter("r")
+game = Hangman.new(:answer)
+
 #User Interface
 puts "Welcome to the word game!"
 puts "This is a two player game, player 1 please enter your name:"
