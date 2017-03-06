@@ -21,13 +21,15 @@
 # Business logic 
 class Hangman 
 	
-	attr_accessor :answer, :letter
+	attr_accessor :answer, :letter, :guesses
 
 	def initialize(answer) 
 		@answer = answer
 		@board = ""
-		@letter = ""
+		@letters = []
 		@blanks = "_"
+		@guesses = []
+		@win
 		
 	end
 
@@ -35,58 +37,80 @@ class Hangman
 		@board << @blanks * @answer.length
 		p @board
 	end
-#fixing rong guesses
-	def guess(letter)
-	if letter.length != 1
-		puts "ple"
+#fixing wrong guesses
+	# def valid_guess
+	# guess_index = 1
+	# 	while guess_index < guess_index
+	# 	puts "Player2 guess a letter"
+	# 	letter = gets.chomp.to_s.downcase
+	# 		if letter.length > 1
+	# 			letter = false
+	# 			puts "please enter one letter"
+	# 		elsif letter != letter.to_s
+	# 			letter = false
+	# 		elsif @guesses.include?(letter)
+	# 			puts "you have already guessed #{letter}"
+	# 			letter = false
+	# 		else
+	# 			letter = true
+	# 		end
+	# 		if letter 
+	# 			ind = letters.index(letter)
+	# 			@board.insert(ind, letter)
+	# 			@board.delete(@blanks)
+	# 		else
+	# 			puts "#{letter} is not in the word"
+	# 		end 
+	# 	guess_index += 1
+	# 	p guess_index
+	# end
 
-
+	# end
 	def guess_letter
-		# win = false
-		guess_index = 1
-		answer_arry = @answer.split('')
+	guess_index = 1 
+	win = false
+	answer_arry = @answer.split('')
 		until guess_index > @board.length
-			puts "Player2 guess a letter"
-			letter = gets.chomp.downcase
-				if answer_arry.include?(letter)
-					p @board(answer_arry(letter))
-						# @blanks.replace(answer_arry[letter])
-					end
-					p @board
-				else
-					puts "#{letter} is not in the word"
-				end
-			guess_index += 1
-			p guess_index
+		puts "Player2 guess a letter"
+		letter = gets.chomp.to_s.downcase
+
+		    if @answer.include?(letter)
+		    	answer_arry.each do |letter|
+		    	@board.insert(guess_index, letter)
+		    	@board.delete(@blanks)
+		        p @board
+		    	end
+		    else
+		        puts "Sorry word does not include that letter. please guess again"
+		    end
+		 guess_index += 1
+		p guess_index
 		end
 	end
-	# guess_index = 0 
-	# win = false
-	# @answer
-	
-	# 	while guess_index < @letters.length 
-	# 	    if @answer.include?(@letter)
-	# 	        @board[letter] = @answer[letter]
-		        
-	# 	        p @board
-	# 	    else
-	# 	        puts "Sorry word does not include that letter. please guess again"
-	# 	        guess_index += 1
-	# 	    end
-	# 	end
-	# end
+	def game_over
+		if !(@board.include? "_")
+			@win = true
+		elsif guesses_remaining == 0 
+			true
+		else
+			false
+		end
 end
 # Start new instance 
 game = Hangman.new("test")
-game.create_board
-game.guess_letter
+# game.create_board
+# game.guess_letter
 # game.guess_letter("r")
 #User Interface
-# puts "Welcome to the word game!"
-# puts "This is a two player game, player 1 please enter your name:"
-# player1 = gets.chomp
-# puts "player 2 please enter your name:"
-# player2 = gets.chomp
-# puts "#{player1} please select a word:"
-# answer = gets.chomp
+puts "Welcome to the word game!"
+puts "This is a two player game, player 1 please enter your name:"
+player1 = gets.chomp
+puts "player 2 please enter your name:"
+player2 = gets.chomp
+puts "Player1 please select a word:"
+@answer = gets.chomp
+game.create_board
+game.guess_letter
+game.game_over
+
 
