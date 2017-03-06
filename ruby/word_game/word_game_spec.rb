@@ -1,7 +1,7 @@
 require_relative 'word_game'
 
 describe Word_game do
-let (:game) {Hangman.new("ball")}
+let (:game) {Hangman.new("test")}
 
   it "stores word" do
   	game.create_board("test")
