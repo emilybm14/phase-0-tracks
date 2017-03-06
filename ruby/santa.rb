@@ -7,7 +7,7 @@ class Santa
 		@ethnicity = ethnicity
 		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", 
 		"Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-		@age = 0
+		@age = rand(140)
 		# puts "Initializing Santa instance with #{@gender} #{@ethnicity} santa"
 	end
 	def speak(words)
@@ -22,6 +22,7 @@ class Santa
 
 	def celebrate_birthday
 		@age += 1
+		age
 	end
 
 	def get_mad_at(reindeer)
@@ -85,8 +86,6 @@ ethnicity_choices = ["black", "Latino", "white", "Japanese-African", "prefer not
 santa_index = 0
 while santa_index < 50
 	new_santa = Santa.new(gender_choices.sample, ethnicity_choices.sample)
-	r = Random.new.rand(140)
-	r.times{new_santa.celebrate_birthday}
 	puts "This santa is #{new_santa.gender} #{new_santa.ethnicity} santa and #{new_santa.age} years old."
 	puts "--------------------------------"
 	santa_index +=1
