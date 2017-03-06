@@ -11,9 +11,9 @@ module Shout
   end
 end
 
-# class Yell 
-#     extend Shout
-# end 
+class Yell 
+    extend Shout
+end 
 
 puts Shout.yell_angrily("NOOOO")
 puts Shout.yelling_happily("You Got it!")
@@ -33,7 +33,7 @@ module Shout
 end
 
 class Yell 
-    include Shout
+  include Shout
 end 
 
 class Exclaim
