@@ -29,7 +29,7 @@ class Hangman
 		@letters = []
 		@blanks = "_"
 		@guesses = []
-		@win
+		@win == false
 		
 	end
 
@@ -37,68 +37,45 @@ class Hangman
 		@board << @blanks * @answer.length
 		p @board
 	end
-#fixing wrong guesses
-	# def valid_guess
-	# guess_index = 1
-	# 	while guess_index < guess_index
-	# 	puts "Player2 guess a letter"
-	# 	letter = gets.chomp.to_s.downcase
-	# 		if letter.length > 1
-	# 			letter = false
-	# 			puts "please enter one letter"
-	# 		elsif letter != letter.to_s
-	# 			letter = false
-	# 		elsif @guesses.include?(letter)
-	# 			puts "you have already guessed #{letter}"
-	# 			letter = false
-	# 		else
-	# 			letter = true
-	# 		end
-	# 		if letter 
-	# 			ind = letters.index(letter)
-	# 			@board.insert(ind, letter)
-	# 			@board.delete(@blanks)
-	# 		else
-	# 			puts "#{letter} is not in the word"
-	# 		end 
-	# 	guess_index += 1
-	# 	p guess_index
-	# end
+
 
 	# end
 	def guess_letter
 	guess_index = 1 
-	win = false
 	answer_arry = @answer.split('')
 		until guess_index > @answer.length
 		puts "Player2 guess a letter"
 		letter = gets.chomp.to_s.downcase
+		
+		if answer_arry.include?(letter)
 
-		    if answer_arry.include?(letter)
-		    	@board.insert(guess_index, letter)
-		    	@board.delete(@blanks)
-		        p @board
+		    answer_arry.each do |letter|
+				@board[answer_arry[index]] = letter
+		     end
 		    	
 		    else
 		        puts "Sorry word does not include that letter. please guess again"
-		    end
+			
+		   end
 		 guess_index += 1
 		p guess_index
 		end
 	end
 	def game_over
-		if !(@board.include?("_"))
+		if !(@board.include? "_")
 			@win = true
-		elsif guesses_remaining == 0 
-			true
+			puts "you won"
 		else
 			false
+			puts"you lost"
 		end
 	end
 end
 # Start new instance 
-game = Hangman.new(:answer)
-
+game = Hangman.new("test")
+# game.create_board
+# game.guess_letter
+# game.guess_letter("r")
 #User Interface
 puts "Welcome to the word game!"
 puts "This is a two player game, player 1 please enter your name:"
@@ -106,7 +83,7 @@ player1 = gets.chomp
 puts "player 2 please enter your name:"
 player2 = gets.chomp
 puts "Player1 please select a word:"
-@answer = gets.chomp
+game.answer = gets.chomp
 game.create_board
 game.guess_letter
 game.game_over
