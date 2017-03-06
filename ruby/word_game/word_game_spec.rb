@@ -1,7 +1,7 @@
 require_relative 'word_game'
 
 describe Word_game do
-let (:game) { Hangman.new([:answer])}
+let (:game) { Hangman.new("test")}
 
   it "stores word" do
   	game.create_board("test")
@@ -9,7 +9,7 @@ let (:game) { Hangman.new([:answer])}
   end
   it "game over" do
   	game.game_over == true
-    expect(game.game_over).to !eq false
+    expect(game.game_over).to eq "you won"
   end
 
 
