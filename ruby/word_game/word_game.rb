@@ -70,16 +70,15 @@ class Hangman
 	guess_index = 1 
 	win = false
 	answer_arry = @answer.split('')
-		until guess_index > @board.length
+		until guess_index > @answer.length
 		puts "Player2 guess a letter"
 		letter = gets.chomp.to_s.downcase
 
-		    if @answer.include?(letter)
-		    	answer_arry.each do |letter|
+		    if answer_arry.include?(letter)
 		    	@board.insert(guess_index, letter)
 		    	@board.delete(@blanks)
 		        p @board
-		    	end
+		    	
 		    else
 		        puts "Sorry word does not include that letter. please guess again"
 		    end
@@ -88,13 +87,14 @@ class Hangman
 		end
 	end
 	def game_over
-		if !(@board.include? "_")
+		if !(@board.include?("_"))
 			@win = true
 		elsif guesses_remaining == 0 
 			true
 		else
 			false
 		end
+	end
 end
 # Start new instance 
 game = Hangman.new("test")
