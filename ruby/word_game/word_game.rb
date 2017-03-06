@@ -42,21 +42,19 @@ class Hangman
 	# end
 	def guess_letter
 	guess_index = 1 
-	answer_arry = @answer.split('')
+	
 	
 		until guess_index > @answer.length
 		puts "Player2 guess a letter"
 		guessed_letter = gets.chomp.to_s.downcase
-		
-        answer_arry.each.with_index do |letter, position|
-		if @board.include?(guessed_letter)
-                @board[position] = guessed_letter
-		    else 
-		    	break
-		        puts "Sorry word does not include that letter. please guess again"
-             end
-             
-		   end
+		answer_arry = @answer.split('')
+        answer_arry.each_with_index do |letter, position| 
+  			if letter == guessed_letter
+   			 @board[position] = letter
+  			else 
+    		 puts " incorrect guess" 
+  			end
+		end
 		 guess_index += 1
 		 p @board
 			puts "Turn #{guess_index}"
