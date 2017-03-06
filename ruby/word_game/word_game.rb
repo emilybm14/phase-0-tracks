@@ -35,6 +35,11 @@ class Hangman
 		@board << @blanks * @answer.length
 		p @board
 	end
+#fixing rong guesses
+	def guess(letter)
+	if letter.length != 1
+		puts "ple"
+
 
 	def guess_letter
 		# win = false
@@ -44,9 +49,10 @@ class Hangman
 			puts "Player2 guess a letter"
 			letter = gets.chomp.downcase
 				if answer_arry.include?(letter)
-					# letter.each do |letter|
-					# 	board[letter] = answer[letter]
-					# end
+					p @board(answer_arry(letter))
+						# @blanks.replace(answer_arry[letter])
+					end
+					p @board
 				else
 					puts "#{letter} is not in the word"
 				end
