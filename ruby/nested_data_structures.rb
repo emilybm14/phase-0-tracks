@@ -62,3 +62,4 @@ classroom[:historyroom][:student_count][:present] = 1
 classroom[:historyroom][:desk_contents].push('history_notebook', 'history_textbook')
 classroom[:historyroom]
 
+
