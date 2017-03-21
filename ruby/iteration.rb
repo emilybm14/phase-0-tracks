@@ -1,3 +1,22 @@
+# Testing
+# 3.times { |x| puts "I'm printing something from a block, and x is #{x}!" }
+
+# 6.times { |block_count| puts "This block has already run #{block_count} times." }
+
+# ["a","b","c","d"].each { |item| puts "Now the block parameter has a value of the current array item: #{item}" }
+
+# 2.times { puts "This block works just fine even without a parameter." }
+
+# dinos = ["T-rex", "brontosaurus", "pterodactyl"]
+# number_of_dinos = dinos.length
+# number_of_dinos.times { |i| puts dinos[i] }
+
+# index = 0
+# while index < number_of_dinos
+#   puts dinos[index]
+#   index += 1
+# end
+
 # Release 0
 
 def farwell
@@ -12,76 +31,76 @@ farwell { |phrase| puts "see you later, #{phrase}" }
 
 birds = ["ostrich", "emuu", "penguin", "kiwi"]
 
-bears = {"grizzley" => "scary", "polar" => "scary", "the pooh" => "not scary"}
+animals = {"bear" => "scary", "puppy" => "cuddly", "shark" => "deadly"}
 
-p birds
+# p birds
 birds.each do |bird|
 	puts "I dont think that #{bird} flies"
 end
-p birds
+# p birds
 
 birds.map! do |bird|
 	puts "#{bird} cant fly"
 	bird + " cant fly"
 end
 
-p birds
+# p birds
 
-p bears 
-bears.each do |bear, is_scary|
+p animals 
+animals.each do |bear, is_scary|
 	puts "scientists say that #{bear} is conclusively #{is_scary}"
 end
 
-p bears
+p animals
 
 #Release 2
 
-array_num = [2, 55, 3, 2, 67, 34]
+numbers = [2, 55, 3, 2, 67, 34]
 
-hash_words = {"yellow"=> "adj", "run" => "vrb", "loud" => "adj", "swim" => "vrb"}
+word_list = {"yellow"=> "adj", "run" => "vrb", "loud" => "adj", "swim" => "vrb"}
 
-p array_num
-array_num.delete_if { |number| number > 30 }
-p array_num
+p numbers
+numbers.delete_if { |number| number > 30 }
+p numbers
 
-p hash_words
-hash_words.delete_if { |word, word_type| word_type == "adj"}
-p hash_words
+p word_list
+word_list.delete_if { |word, word_type| word_type == "adj"}
+p word_list
 
-array_num = [2, 55, 3, 2, 67, 34]
+numbers = [2, 55, 3, 2, 67, 34]
 
-hash_words = {"yellow"=> "adj", "run" => "vrb", "loud" => "adj", "swim" => "vrb"}
+word_list = {"yellow"=> "adj", "run" => "vrb", "loud" => "adj", "swim" => "vrb"}
 
-p array_num
-array_num.keep_if { |number| number > 30 }
-p array_num
+p numbers
+numbers.keep_if { |number| number > 30 }
+p numbers
 
-p hash_words
-hash_words.keep_if { |word, word_type| word_type == "adj"}
-p hash_words
+p word_list
+word_list.keep_if { |word, word_type| word_type == "adj"}
+p word_list
 
-array_num = [2, 55, 3, 2, 67, 34]
+numbers = [2, 55, 3, 2, 67, 34]
 
-hash_words = {"yellow"=> "adj", "run" => "vrb", "loud" => "adj", "swim" => "vrb"}
+word_list = {"yellow"=> "adj", "run" => "vrb", "loud" => "adj", "swim" => "vrb"}
 
-p array_num
-p array_num.fetch(2)
-p array_num
+p numbers
+p numbers.fetch(2)
+p numbers
 
-p hash_words
-p hash_words.assoc("swim")
-p hash_words
+p word_list
+p word_list.assoc("swim")
+p word_list
 
-array_num = [2, 55, 3, 2, 67, 34]
+numbers = [2, 55, 3, 2, 67, 34]
 
-hash_words = {"yellow"=> "adj", "run" => "vrb", "loud" => "adj", "swim" => "vrb"}
+word_list = {"yellow"=> "adj", "run" => "vrb", "loud" => "adj", "swim" => "vrb"}
 
-p array_num
-new_array = array_num.take_while { |number| number < 60 }
-p array_num
+p numbers
+new_array = numbers.take_while { |number| number < 60 }
+p numbers
 p new_array
 
-p hash_words
-new_hash = hash_words.reject { |word, word_type| word_type == "adj"}
-p hash_words
+p word_list
+new_hash = word_list.reject { |word, word_type| word_type == "adj"}
+p word_list
 p new_hash
