@@ -1,7 +1,7 @@
 
 
 # Psuedocode
-# - create a method that takes a list of integers, a number
+# - create a method that takes a list of integers,a number
 # - search the list for the number
 # - if the number is found say what position it was 
 # - if not sad face
