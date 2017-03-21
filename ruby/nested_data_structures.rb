@@ -11,9 +11,9 @@ classroom = {
       absent: 2 
     },
     desk_contents: [
-      "pens",
-      "jacket",
-      "backpack"
+      'pens',
+      'jacket',
+      'backpack'
       ]
   },
   mathroom: {
@@ -23,10 +23,10 @@ classroom = {
       absent: 1 
     },
     desk_contents: [
-      "math_textbook",
-      "math_notebook",
-      "pencils",
-      "backpack"
+      'math_textbook',
+      'math_notebook',
+      'pencil',
+      'backpack'
       ]
   }, 
   scienceroom: {
@@ -36,11 +36,11 @@ classroom = {
       absent: 3
     },
     desk_contents: [
-      "science_textbook",
-      "science_notebook",
-      "pens",
-      "highlighters",
-      "backpack"
+      'science_textbook',
+      'science_notebook',
+      'pens',
+      'highlighters',
+      'backpack'
       ]
   },
   historyroom: {
@@ -54,12 +54,18 @@ classroom = {
 }
 
 #print the notebook in the science class
-classroom[:scienceroom][:desk_contents][1]
+p classroom[:scienceroom][:desk_contents][1]
 
 
-#add 1 student with a textbook and notebook for history class
+# print empty history room 
+# then add 1 student with a textbook and notebook for history class
+p classroom[:historyroom]
 classroom[:historyroom][:student_count][:present] = 1
 classroom[:historyroom][:desk_contents].push('history_notebook', 'history_textbook')
-classroom[:historyroom]
+p classroom[:historyroom]
+
+# printout the pretty name for the homeroom
+p classroom[:homeroom][:pretty_name]
+
 
 
