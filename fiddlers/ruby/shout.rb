@@ -15,8 +15,8 @@ class Yell
 end
 
 
-puts Shout.yell_angrily("NOOOO")
-puts Shout.yell_happily("YEAAAA")
+# puts Shout.yell_angrily("NOOOO")
+# puts Shout.yell_happily("YEAAAA")
 
 
 
@@ -37,8 +37,16 @@ class Scream
 	include Exclaim
 end
 
+class Person
+	include Exclaim
+end
+
 scream = Scream.new
 puts scream.yell_angrily("AHHHHHH")
 puts scream.yell_happily("YAYYYYYYY")
+
+person = Person.new
+puts scream.yell_angrily("person yelling angrily")
+puts scream.yell_happily("person yelling happily")
 
 
