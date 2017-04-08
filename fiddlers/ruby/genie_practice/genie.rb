@@ -8,7 +8,6 @@ class Genie
     @age = age
     @in_lamp = true
     @submitted_wishes = {}
-    @wish_granted = true
   end
   def enter_lamp
     @in_lamp = true
@@ -24,17 +23,17 @@ class Genie
       if @submitted_wishes.length <= 2
         @submitted_wishes[request] = "Granted"
         puts "Your #{request} has been granted"
-        @wish_granted = true
+        return true
       else
         @submitted_wishes[request] = "Not Granted"
         puts "Sorry I've already granted you three wishes"
-        @wish_granted = false
+        return false
       end
     end
 
     enter_lamp
     @submitted_wishes
-    @wish_granted
+    
   end
 
   def display_history
@@ -47,7 +46,7 @@ class Genie
 
   def favorite_wish
     vowel_count = []
-    @submitted_wishes.length.times do |wish, granted|
+    @submitted_wishes.length.times do |request, granted|
       vowel_count << @submitted_wishes[wish].count("aeiou")
       vowel_count
     end
