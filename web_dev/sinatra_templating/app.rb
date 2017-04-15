@@ -7,6 +7,7 @@ set :public_folder, File.dirname(__FILE__) + '/static'
 db = SQLite3::Database.new("students.db")
 db.results_as_hash = true
 
+
 # show students on the home page
 get '/' do
   @students = db.execute("SELECT * FROM students")
@@ -25,3 +26,9 @@ post '/students' do
 end
 
 # add static resources
+
+# add a course list 
+# connect to home page
+get '/course-list' do 
+	erb :course_list
+end
