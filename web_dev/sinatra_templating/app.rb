@@ -32,3 +32,7 @@ end
 get '/course-list' do 
 	erb :course_list
 end
+
+post '/course' do
+  redirect '/'
+end
