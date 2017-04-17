@@ -1,9 +1,9 @@
 
 
 function colorchange() {
-li.fontcolor= "Green";
+li.fontcolor = "Green";
 }
 
 
-var li = document.getElementsbyID("list").getElementsByTagName("li");
+var li = document.getElementsbyID("item")
 li.addEventListener("click", colorchange)
